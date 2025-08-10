@@ -41,4 +41,6 @@ def delete_user(user_id: int):
         return {"error": f"user {user_id} not found"}
 @app.get("/")
 def add(a: int, b: int):
+    print("total sum is :", a + b)
     return a + b
+
