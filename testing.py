@@ -39,4 +39,6 @@ def delete_user(user_id: int):
         return {"message": "User deleted successfully", "user_id": user_id}
     else:
         return {"error": f"user {user_id} not found"}
-    
+@app.get("/")
+def add(a: int, b: int):
+    return a + b
