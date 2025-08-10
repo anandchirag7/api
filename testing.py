@@ -1,8 +1,9 @@
 from fastapi import FastAPI
+# from ngrok_asgi import NgrokASGI
 from pydantic import BaseModel
 
 app = FastAPI()
-
+# app = NgrokASGI(app)
 user_db = {
     1: {
         "name": "John Doe",
