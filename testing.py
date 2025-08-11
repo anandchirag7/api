@@ -23,6 +23,10 @@ class User(BaseModel):
     name: str
     age: int
 
+class SubModel(BaseModel):
+    a: int
+    b: int
+
 @app.put("/user_db/data/v1/update/{user_id}")
 def user_update(user_id: int, user_data: User):
     if user_id in user_db:
@@ -40,8 +44,11 @@ def delete_user(user_id: int):
         return {"message": "User deleted successfully", "user_id": user_id}
     else:
         return {"error": f"user {user_id} not found"}
-@app.get("/")
+@app.get("/Add")
 def add(a: int, b: int):
     print("total sum is :", a + b)
     return a + b
 
+@app.post("/subtract")
+def subtract(var: SubModel):
+    return var.a - var.b
